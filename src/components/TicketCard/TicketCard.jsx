@@ -1,24 +1,25 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./TicketCard.module.scss";
 
-const TicketCard = () => {
+const TicketCard = (props) => {
+  const { name, role } = props;
 
   const [counter, updateCounter] = useState(0);
 
   const increase = () => {
-    updateCounter(counter+1)
-  }
+    updateCounter(counter + 1);
+  };
 
   const decrease = () => {
-    updateCounter(counter-1)
-  }
-  
+    updateCounter(counter - 1);
+  };
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.employeeInfo}>
-          <h2>Name</h2>
-          <h3>Role</h3>
+          <h2>{name}</h2>
+          <h3>{role}</h3>
         </div>
         <div className={styles.counter}>
           <p>Counter</p>
