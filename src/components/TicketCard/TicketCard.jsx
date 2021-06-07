@@ -11,7 +11,11 @@ const TicketCard = (props) => {
   };
 
   const decrease = () => {
-    updateCounter(counter - 1);
+    if (counter - 1 <= 0) {
+      updateCounter(0);
+    } else {
+      updateCounter(counter - 1);
+    }
   };
 
   return (
